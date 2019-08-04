@@ -10,5 +10,9 @@
     "Resume": "https://www.linkedin.com/in/kr-abhishek/",
     "Referrer": "Vettery",
     "Status": "Yes (F1-OPT)",
-    "Puzzle": "ABCD"    
+    "Puzzle": [" ABCD", 
+               "A=><>", 
+               "B<=<<", 
+               "C>>=>", 
+               "D<><="]    
 }
