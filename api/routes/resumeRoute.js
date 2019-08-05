@@ -3,6 +3,6 @@ const router = express.Router();
 
 const resumeController = require('../controllers').resumeController;
 
-router.get('/resume/getsample', resumeController.getSample);
+router.get('/resume', resumeController.getSample);
 
 module.exports = router;
