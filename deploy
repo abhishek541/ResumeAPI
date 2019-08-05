@@ -2,7 +2,10 @@
 
 ssh ubuntu@ec2-18-207-213-151.compute-1.amazonaws.com <<EOF
  cd ~/EMXDigital/ResumeAPI
- git pull
+ git pull origin master
+ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+ . ~/.nvm/nvm.sh
+ nvm install 8
  npm install
  forever stopall
  forever start server.js
