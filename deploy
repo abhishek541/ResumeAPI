@@ -1,0 +1,10 @@
+#!/bin/sh
+
+ssh ubuntu@ec2-18-207-213-151.compute-1.amazonaws.com <<EOF
+ cd ~/EMXDigital/ResumeAPI
+ git pull
+ npm install
+ forever stopall
+ forever start server.js
+ exit
+EOF
