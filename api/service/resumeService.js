@@ -1,3 +1,4 @@
+const logger = require('../../logger');
 const resumeData = require('./data');
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
         let symbolStr = queryStr.substring(queryStr.indexOf(':') + 1);
         let strArr = symbolStr.split(" ");
         let symbolArr = [];
-    
+        
         for(let i=2; i<strArr.length; i++) {
           let temp = strArr[i].split("");
           symbolArr.push(temp.slice(1));
@@ -54,7 +55,7 @@ module.exports = {
             }
           }
       }
-    
+      logger.log("info", answer);
       return answer;
     }
 }
