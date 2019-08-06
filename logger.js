@@ -1,4 +1,5 @@
 const winston = require('winston');
+const moment = require('moment-timezone');
 
 var options = {
     level: 'info',
@@ -10,13 +11,19 @@ var options = {
     colorize: true,
 };
 
+var logFormat = winston.format.printf(info => `${info.timestamp} [${info.level}]: ${info.message}`);
+
+var getCurrentTime = winston.format((info, opts) => {
+    if(opts.tz)
+      info.timestamp = moment().tz(opts.tz).format();
+    return info;
+});
+
 var logger = new winston.createLogger({
     format: winston.format.combine(
-        winston.format.timestamp(),
+        getCurrentTime({ tz: 'America/New_York' }),
         winston.format.prettyPrint(),
-        winston.format.printf(info => {
-            return `${info.timestamp} ${info.level}: ${info.message}`;
-        })
+        logFormat
     ),
     transports: [
         new winston.transports.File(options)

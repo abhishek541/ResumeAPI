@@ -1,4 +1,3 @@
-const logger = require('../../logger');
 const resumeData = require('./data');
 
 module.exports = {
@@ -12,17 +11,13 @@ function getTextResponse(query) {
 
 function getQueryAnswer(queryStr) {
     let symbolStr = queryStr.substring(queryStr.indexOf(':') + 1);
-    logger.log("info", "Puzzle is: " + symbolStr);
     let strArr = symbolStr.split(`\n`);
-    logger.log("info", `String array is: ${strArr}`);
     let symbolArr = [];
     
     for(let i=2; i<strArr.length; i++) {
       let temp = strArr[i].split("");
       symbolArr.push(temp.slice(1));
     }
-    
-    logger.log("info", `Symbol array is: ${symbolArr}`);
 
     let row = symbolArr.length;
     let col = symbolArr[0].length;
@@ -58,7 +53,6 @@ function getQueryAnswer(queryStr) {
     symbolArr[i] = strArr[1].charAt(i+1) + symbolArr[i].join("");
   }
   answer += symbolArr.join(`\n`);
-  logger.log("info", `Answer is: ${answer}`);
   return answer;
 }
 
