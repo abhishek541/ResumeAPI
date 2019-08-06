@@ -13,11 +13,11 @@ function getTextResponse(query) {
 function getQueryAnswer(queryStr) {
     let symbolStr = queryStr.substring(queryStr.indexOf(':') + 1);
     logger.log("info", "Puzzle is: " + symbolStr);
-    let strArr = symbolStr.split(" ");
+    let strArr = symbolStr.split(`\n`);
     logger.log("info", strArr);
     let symbolArr = [];
     
-    for(let i=2; i<strArr.length; i++) {
+    for(let i=1; i<strArr.length; i++) {
       let temp = strArr[i].split("");
       symbolArr.push(temp.slice(1));
     }
