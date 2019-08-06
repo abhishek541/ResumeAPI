@@ -22,7 +22,7 @@ function getQueryAnswer(queryStr) {
       symbolArr.push(temp.slice(1));
     }
     
-    logger.log("info", `Symbol array is: ${strArr}`);
+    logger.log("info", `Symbol array is: ${symbolArr}`);
 
     let row = symbolArr.length;
     let col = symbolArr[0].length;
@@ -63,7 +63,7 @@ function getQueryAnswer(queryStr) {
         }
       }
   }
-  logger.log("info", answer);
+  logger.log("info", `Answer is: ${answer}`);
   return answer;
 }
 
