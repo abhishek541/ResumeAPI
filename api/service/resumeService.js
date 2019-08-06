@@ -14,7 +14,7 @@ function getQueryAnswer(queryStr) {
     let symbolStr = queryStr.substring(queryStr.indexOf(':') + 1);
     logger.log("info", "Puzzle is: " + symbolStr);
     let strArr = symbolStr.split(`\n`);
-    logger.log("info", strArr);
+    logger.log("info", `String array is: ${strArr}`);
     let symbolArr = [];
     
     for(let i=1; i<strArr.length; i++) {
@@ -22,6 +22,8 @@ function getQueryAnswer(queryStr) {
       symbolArr.push(temp.slice(1));
     }
     
+    logger.log("info", `Symbol array is: ${strArr}`);
+
     let row = symbolArr.length;
     let col = symbolArr[0].length;
 
@@ -53,7 +55,7 @@ function getQueryAnswer(queryStr) {
 
   let answer = ` ABCD\n`;
   for(let i=0; i<row; i++){
-      answer += strArr[1].charAt(i);
+      answer += strArr[0].charAt(i+1);
       for(let j=0; j<col; j++){
         answer += symbolArr[i][j];
         if(j == 3) {
