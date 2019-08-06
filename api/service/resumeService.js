@@ -12,6 +12,7 @@ function getTextResponse(query) {
 
 function getQueryAnswer(queryStr) {
     let symbolStr = queryStr.substring(queryStr.indexOf(':') + 1);
+    logger.log("info", "Puzzle is: " + symbolStr);
     let strArr = symbolStr.split(" ");
     let symbolArr = [];
     
