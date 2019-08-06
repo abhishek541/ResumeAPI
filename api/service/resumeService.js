@@ -58,7 +58,7 @@ function getQueryAnswer(queryStr) {
       answer += strArr[1].charAt(i+1);
       for(let j=0; j<col; j++){
         answer += symbolArr[i][j];
-        if(j == 3) {
+        if(i < 3 && j == 3) {
           answer += `\n`;
         }
       }
