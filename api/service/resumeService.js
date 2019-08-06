@@ -54,15 +54,10 @@ function getQueryAnswer(queryStr) {
     }
 
   let answer = ` ABCD\n`;
-  for(let i=0; i<row; i++){
-      answer += strArr[1].charAt(i+1);
-      for(let j=0; j<col; j++){
-        answer += symbolArr[i][j];
-        if(i < 3 && j == 3) {
-          answer += `\n`;
-        }
-      }
+  for(let i=0; i<row; i++){ 
+    symbolArr[i] = strArr[1].charAt(i+1) + symbolArr[i].join("");
   }
+  answer += symbolArr.join(`\n`);
   logger.log("info", `Answer is: ${answer}`);
   return answer;
 }
