@@ -14,13 +14,14 @@ function getQueryAnswer(queryStr) {
     let symbolStr = queryStr.substring(queryStr.indexOf(':') + 1);
     logger.log("info", "Puzzle is: " + symbolStr);
     let strArr = symbolStr.split(" ");
+    logger.log("info", strArr);
     let symbolArr = [];
     
     for(let i=2; i<strArr.length; i++) {
       let temp = strArr[i].split("");
       symbolArr.push(temp.slice(1));
     }
-
+    
     let row = symbolArr.length;
     let col = symbolArr[0].length;
 
