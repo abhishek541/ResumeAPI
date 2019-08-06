@@ -17,7 +17,7 @@ function getQueryAnswer(queryStr) {
     logger.log("info", `String array is: ${strArr}`);
     let symbolArr = [];
     
-    for(let i=1; i<strArr.length; i++) {
+    for(let i=2; i<strArr.length; i++) {
       let temp = strArr[i].split("");
       symbolArr.push(temp.slice(1));
     }
@@ -55,7 +55,7 @@ function getQueryAnswer(queryStr) {
 
   let answer = ` ABCD\n`;
   for(let i=0; i<row; i++){
-      answer += strArr[0].charAt(i+1);
+      answer += strArr[1].charAt(i+1);
       for(let j=0; j<col; j++){
         answer += symbolArr[i][j];
         if(j == 3) {
